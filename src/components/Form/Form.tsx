@@ -1,24 +1,22 @@
 import { Container, ContainerSucces } from './styles'
-import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'
-import ReCAPTCHA from 'react-google-recaptcha'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import validator from 'validator'
+import emailjs from '@emailjs/browser'
 
 export function Form() {
-  const [state, handleSubmit] = useForm('xknkpqry')
   const [validEmail, setValidEmail] = useState(false)
-  const [isHuman, setIsHuman] = useState(false)
   const [message, setMessage] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const formRef = useRef<HTMLFormElement | null>(null)
+
   function verifyEmail(email: string) {
-    if (validator.isEmail(email)) {
-      setValidEmail(true)
-    } else {
-      setValidEmail(false)
-    }
+    setValidEmail(validator.isEmail(email))
   }
+
   useEffect(() => {
-    if (state.succeeded) {
+    if (submitted) {
       toast.success('Email successfully sent!', {
         position: toast.POSITION.BOTTOM_LEFT,
         pauseOnFocusLoss: false,
@@ -27,15 +25,40 @@ export function Form() {
         toastId: 'succeeded',
       })
     }
-  })
-  if (state.succeeded) {
+  }, [submitted])
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    if (!formRef.current) return
+
+    emailjs
+      .sendForm(
+        'service_byj3j6o',     // 👈 Replace with your EmailJS service ID
+        'template_p1pt0ov',    // 👈 Replace with your EmailJS template ID
+        formRef.current,
+        '-6rtBy5nPljuARXj_'      // 👈 Replace with your EmailJS public key
+      )
+      .then(
+        () => {
+          setSubmitted(true)
+          setIsSubmitting(false)
+        },
+        (error) => {
+          console.error('FAILED...', error)
+          toast.error('Failed to send email.')
+          setIsSubmitting(false)
+        }
+      )
+  }
+
+  if (submitted) {
     return (
       <ContainerSucces>
         <h3>Thanks for getting in touch!</h3>
         <button
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           Back to the top
         </button>
@@ -43,44 +66,27 @@ export function Form() {
       </ContainerSucces>
     )
   }
+
   return (
     <Container>
       <h2>Get in touch using the form</h2>
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={sendEmail}>
         <input
           placeholder="Email"
-          id="email"
           type="email"
-          name="email"
-          onChange={(e) => {
-            verifyEmail(e.target.value)
-          }}
+          name="user_email"
+          onChange={(e) => verifyEmail(e.target.value)}
           required
         />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
           required
           placeholder="Send a message to get started."
-          id="message"
           name="message"
-          onChange={(e) => {
-            setMessage(e.target.value)
-          }}
+          onChange={(e) => setMessage(e.target.value)}
         />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
-        <ReCAPTCHA
-          sitekey="6Lfj9NYfAAAAAP8wPLtzrsSZeACIcGgwuEIRvbSg"
-          onChange={(e) => {
-            setIsHuman(true)
-          }}
-        ></ReCAPTCHA>
         <button
           type="submit"
-          disabled={state.submitting || !validEmail || !message || !isHuman}
+          disabled={isSubmitting || !validEmail || !message}
         >
           Submit
         </button>
