@@ -4,19 +4,33 @@ import { Hero } from "../Hero/Hero";
 import { About } from "../About/About";
 import { Contact } from "../Contact/Contact";
 import { Project } from "../Project/Project";
-import python from "../../assets/python.svg"
-import java from "../../assets/java.svg"
-import wordpress from "../../assets/wordpress.svg";
-import shopify from "../../assets/shopify.svg";
+// import python from "../../assets/python.svg"
+// import java from "../../assets/java.svg"
+// import wordpress from "../../assets/wordpress.svg";
+// import shopify from "../../assets/shopify.svg";
+// import htmlIcon from "../../assets/html-icon.svg";
+// import cssIcon from "../../assets/css-icon.svg";
+// import sassIcon from "../../assets/sass-icon.svg";
+// import jsIcon from "../../assets/js-icon.svg";
+// // import nodeIcon from "../../assets/node-icon.svg";
+// import reactIcon from "../../assets/react-icon.svg";
+// import typescriptIcon from "../../assets/typescript-icon.svg";
+// import vueIcon from "../../assets/vue-icon.svg";
+// import boostrapIcon from "../../assets/bootstrap-icon.svg";
 import htmlIcon from "../../assets/html-icon.svg";
-import cssIcon from "../../assets/css-icon.svg";
 import sassIcon from "../../assets/sass-icon.svg";
-import jsIcon from "../../assets/js-icon.svg";
-// import nodeIcon from "../../assets/node-icon.svg";
-import reactIcon from "../../assets/react-icon.svg";
-import typescriptIcon from "../../assets/typescript-icon.svg";
-import vueIcon from "../../assets/vue-icon.svg";
+import cssIcon from "../../assets/css-icon.svg";
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
+import tailwindIcon from "../../assets/tailwind-css-icon.svg";
+import jsIcon from "../../assets/js-icon.svg";
+import reactIcon from "../../assets/react-icon.svg";
+import nextIcon from "../../assets/nextjs-icon.svg";
+import angularIcon from "../../assets/angular-icon.svg";
+import typescriptIcon from "../../assets/typescript-icon.svg";
+import gitIcon from "../../assets/git-icon.png";
+import nodejsIcon from "../../assets/nodejs-icon.svg";
+import expressIcon from "../../assets/expressjs-icon.svg";
+import mongodbIcon from "../../assets/mongodb-icon.svg";
 
 export function Main() {
   return (
@@ -151,52 +165,7 @@ export function Main() {
               },
               "image": [
                 {
-                  "src": boostrapIcon,
-                  "width": 20,
-                  "height": 20
-                },
-                {
-                  "src": cssIcon,
-                  "width": 20,
-                  "height": 20
-                },
-                {
-                  "src": wordpress,
-                  "width": 20,
-                  "height": 20
-                },
-                {
-                  "src": shopify,
-                  "width": 20,
-                  "height": 20
-                },
-                {
                   "src": htmlIcon,
-                  "width": 20,
-                  "height": 20
-                },
-                {
-                  "src": jsIcon,
-                  "width": 20,
-                  "height": 20
-                },
-                // {
-                //   "src": mysqlIcon,
-                //   "width": 20,
-                //   "height": 20
-                // },
-                {
-                  "src": python,
-                  "width": 20,
-                  "height": 20
-                },
-                {
-                  "src": java,
-                  "width": 20,
-                  "height": 20
-                },
-                {
-                  "src": reactIcon,
                   "width": 20,
                   "height": 20
                 },
@@ -206,22 +175,143 @@ export function Main() {
                   "height": 20
                 },
                 {
+                  "src": cssIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": boostrapIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": tailwindIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": jsIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": reactIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": nextIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": angularIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
                   "src": typescriptIcon,
                   "width": 20,
                   "height": 20
                 },
-                // {
-                //   "src": vscodeIcon,
-                //   "width": 20,
-                //   "height": 20
-                // },
                 {
-                  "src": vueIcon,
+                  "src": gitIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": nodejsIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": expressIcon,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": mongodbIcon,
                   "width": 20,
                   "height": 20
                 },
 
               ],
+
+
+              
+              // "image": [
+              //   {
+              //     "src": boostrapIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": cssIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": wordpress,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": shopify,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": htmlIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": jsIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   // {
+              //   //   "src": mysqlIcon,
+              //   //   "width": 20,
+              //   //   "height": 20
+              //   // },
+              //   {
+              //     "src": python,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": java,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": reactIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": sassIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   {
+              //     "src": typescriptIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+              //   // {
+              //   //   "src": vscodeIcon,
+              //   //   "width": 20,
+              //   //   "height": 20
+              //   // },
+              //   {
+              //     "src": vueIcon,
+              //     "width": 20,
+              //     "height": 20
+              //   },
+
+              // ],
               "polygon": {
                 "sides": 5
               },
