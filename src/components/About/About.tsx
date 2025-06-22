@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import AbdulMoedsec from "../../assets/Abdul-Moeed.png";
+import AbdulMoedsec from "../../assets/Abdul-Moeed.jpg";
 import htmlIcon from "../../assets/html-icon.svg";
 import sassIcon from "../../assets/sass-icon.svg";
 import cssIcon from "../../assets/css-icon.svg";
