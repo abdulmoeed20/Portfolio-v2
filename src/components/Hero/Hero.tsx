@@ -21,7 +21,7 @@ export function Hero() {
           <h1>Abdul Moeed</h1>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
-          <h3>Software Engineer</h3>
+          <h3 className="small-resume">Software Engineer</h3>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.8 * 1000}>
           <BrowserRouter>
