@@ -20,6 +20,10 @@ export const Container = styled.section`
     }
 
     
+    h3.small-resume {
+      margin-bottom: 5rem;
+    }
+    
     p.small-resume {
       margin-bottom: 5rem;
     }
